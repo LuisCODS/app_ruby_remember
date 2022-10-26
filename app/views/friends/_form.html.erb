@@ -1,37 +1,55 @@
-<%= form_with(model: friend) do |form| %>
-  <% if friend.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+<%= form_for @friend, :html => { :class => "form-horizontal friend" } do |f| %>
 
-      <ul>
-        <% friend.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+  <% if @friend.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@friend.errors.count, "error") %> prohibited this friend from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @friend.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
         <% end %>
-      </ul>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :adress, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :adress, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:adress) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :email, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:email) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :phone, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:phone) %>
   </div>
 
-  <div class="field">
-    <%= form.label :adress %>
-    <%= form.text_field :adress %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                friends_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

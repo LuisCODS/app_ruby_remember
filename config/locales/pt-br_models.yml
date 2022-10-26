@@ -1,0 +1,19 @@
+"pt-BR":
+  activerecord:
+    models:
+      annotation: Anotacao
+      friends: Amigos
+    attributes:
+      annotation:
+        id: "Codico"
+        body: "Anotacao"
+        created_at: "Criado em"
+        updated_at: "Atuaizado em"
+      friend:
+        id: "Codico"
+        name: "Nome"
+        email: "Email"
+        adress: "Endereco"
+        phone: "Telefone"
+        created_at: "Criado em"
+        updated_at: "Atuaizado em"
