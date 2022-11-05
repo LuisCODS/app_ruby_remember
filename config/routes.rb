@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
 
-  # DEFAULT ROUTE
+  get 'welcome/index'
+  # SET DEFAULT ROUTE
   root 'welcome#index'
 
   resources :friends

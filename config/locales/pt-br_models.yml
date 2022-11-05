@@ -1,8 +1,8 @@
 "pt-BR":
   activerecord:
     models:
-      annotation: Anotacao
-      friends: Amigos
+      annotation: Anotacõe
+      friend: Amigos
     attributes:
       annotation:
         id: "Codico"

@@ -2,11 +2,14 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.9'
-
-#
+# bootstrap
 gem "twitter-bootstrap-rails"
+# Jquery
 gem 'jquery-rails', '~> 4.5'
+# JS
 gem 'javascript', '~> 0.1.0'
+# Paginacao
+gem 'will_paginate', '~> 3.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7'
@@ -36,6 +39,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rubocop'
 end
 
 group :development do

@@ -1,9 +1,10 @@
 class FriendsController < ApplicationController
   before_action :set_friend, only: %i[ show edit update destroy ]
 
-  # GET /friends or /friends.json
+  # GET /friends or /friends.
+  #  @friends: variable global qui contient une liste des entités Friend. Elle passe aussi le pagination.
   def index
-    @friends = Friend.all
+    @friends = Friend.all.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /friends/1 or /friends/1.json

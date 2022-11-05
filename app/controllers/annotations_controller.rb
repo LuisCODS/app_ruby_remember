@@ -1,13 +1,19 @@
 class AnnotationsController < ApplicationController
+
+  # Va chercher l'entité par son l'id passé par params
   before_action :set_annotation, only: %i[ show edit update destroy ]
 
   # GET /annotations or /annotations.json
   def index
-    @annotations = Annotation.all
+    #  @annotations: variable global qui contient une liste des entités.
+    #  Elle passe aussi la pagination.
+    @annotations = Annotation.all.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /annotations/1 or /annotations/1.json
   def show
+    # Has a reference for Annotation
+    @debug_param = params
   end
 
   # GET /annotations/new

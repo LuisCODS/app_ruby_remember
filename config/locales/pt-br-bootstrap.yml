@@ -15,4 +15,4 @@
       edit: "Editar %{model}"
       save: "Salvar %{model}"
       new: "Novo %{model}"
-      delete: "Aoagar %{model}"
+      delete: "Apagar %{model}"

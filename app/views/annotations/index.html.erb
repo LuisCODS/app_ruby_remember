@@ -18,12 +18,9 @@
         <td><%= annotation.body %></td>
         <td><%=l annotation.created_at %></td>
         <td>
-          <%= link_to t('.show', :default => t("helpers.links.show")),
-                      annotation_path(annotation), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_annotation_path(annotation), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      annotation_path(annotation),
+          <%= link_to t('.show',    :default => t("helpers.links.show")),annotation_path(annotation), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit',    :default => t("helpers.links.edit")),edit_annotation_path(annotation), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),annotation_path(annotation),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
@@ -33,6 +30,7 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_annotation_path,
-            :class => 'btn btn-primary' %>
+<%= link_to t('.new', :default => t("helpers.links.new")),new_annotation_path, :class => 'btn btn-primary' %>
+<br>
+<!-- render page links in the view: -->
+<%= will_paginate @annotations %>
