@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#Faker::Config.locale = 'pt-BR'
+Faker::Config.locale = 'fr-CA'
+
+10.times do |i|
+  Friend.create([
+                  { name:   Faker::Name.name,
+                    adress: Faker::Address.street_name,
+                    phone:  Faker::PhoneNumber.cell_phone,
+                    email:  Faker::Internet.email}
+                ] )
+end
+

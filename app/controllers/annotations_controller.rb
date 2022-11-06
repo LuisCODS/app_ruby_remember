@@ -12,8 +12,8 @@ class AnnotationsController < ApplicationController
 
   # GET /annotations/1 or /annotations/1.json
   def show
-    # Has a reference for Annotation
-    @debug_param = params
+    # il s'uffit de passe la variable à la view pour deboguer la queryString
+    # @debug_param = params
   end
 
   # GET /annotations/new
