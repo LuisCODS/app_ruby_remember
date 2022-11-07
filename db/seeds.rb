@@ -14,7 +14,8 @@ Faker::Config.locale = 'fr-CA'
                   { name:   Faker::Name.name,
                     adress: Faker::Address.street_name,
                     phone:  Faker::PhoneNumber.cell_phone,
-                    email:  Faker::Internet.email}
-                ] )
+                    email:  Faker::Internet.email
+                  }
+                ])
 end
 
