@@ -9,7 +9,7 @@
 #Faker::Config.locale = 'pt-BR'
 Faker::Config.locale = 'fr-CA'
 
-10.times do |i|
+5.times do |i|
   Friend.create([
                   { name:   Faker::Name.name,
                     adress: Faker::Address.street_name,
