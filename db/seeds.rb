@@ -12,10 +12,10 @@ Faker::Config.locale = 'fr-CA'
 5.times do |i|
   Friend.create([
                   { name:   Faker::Name.name,
-                    adress: Faker::Address.street_name,
+                    address: Faker::Address.street_name,
                     phone:  Faker::PhoneNumber.cell_phone,
-                    email:  Faker::Internet.email
-                  }
+                    email:  Faker::Internet.email,
+                    sex:  "M" }
                 ])
 end
 
