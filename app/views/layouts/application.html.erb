@@ -25,25 +25,27 @@
     </div>
     <div class="container">
       <div class="row">
-        <!--==== render page view=====-->
+        <!--==== render page view =====-->
         <div class="col-lg-10">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
+        <br>
         <!--======== Sidebar =========-->
         <div class="col-lg-2">
           <div class="well sidebar-nav">
             <h3>Sidebar</h3>
             <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
+              <li class="nav-header"></li>
               <li><%= link_to "Inicio", root_path  %></li>
-              <li><%= link_to "Anotcao", annotations_path  %></li>
+              <li><%= link_to "Anotação", annotations_path  %></li>
               <li><%= link_to "Amigos", friends_path  %></li>
             </ul>
           </div>
         </div>
       </div>
       <!--=========================== FOOTER ========================-->
+      <br>
       <footer>
         <p>&copy; Company 2022</p>
       </footer>
