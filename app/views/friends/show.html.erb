@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Show page</h1>
+<p><strong>Name:    </strong><%= @friend.name %></p>
+<p><strong>Address: </strong><%= @friend.address %></p>
+<p><strong>Email:   </strong><%= @friend.email %></p>
+<p><strong>Phone:   </strong><%= @friend.phone %></p>
+<p><strong>Sex:     </strong><%= @friend.sex %></p>
+
+<% if(@friend.annotations.length > 0) %>
+  <hr>
+  <br>
+  <h3>Lista das anotacoes associadas(<%= @friend.annotations.length %>)</h3>
+  <% @friend.annotations.each do |annotation| %>
+    <li>Content: <%= annotation.body %> </li>
+    <br>
+  <% end %>
+  <br>
+<% end %>
+<br>
+<%= link_to 'Edit', edit_friend_path(@friend) %> |
+<%= link_to 'Back', friends_path %>

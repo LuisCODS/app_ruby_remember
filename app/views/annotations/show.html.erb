@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+<h1>Show page</h1>
+<p><strong>Body:</strong><%= @annotation.body %></p>
+<p><strong>Belongs to Friend:</strong><%= @annotation.friend.name %></p>
+<br>
+<%= link_to 'Edit', edit_annotation_path(@annotation) %> |
+<%= link_to 'Back', annotations_path %>
