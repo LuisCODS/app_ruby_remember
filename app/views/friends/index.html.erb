@@ -1,12 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-
 <%= form_tag(friends_path, :method => :get) do %>
   <%= text_field_tag 'to_search', nil, placeholder: 'Enter search term...' %>
-  <%= submit_tag "Go" %>
+  <%= submit_tag "Find" %>
 <% end %>
-
-
 
 <h1>Friends</h1>
 
@@ -21,7 +18,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @friends.each do |friend| %>
       <tr>
@@ -32,7 +28,8 @@
         <td><%= friend.sex %></td>
         <td><%= link_to 'Show', friend %></td>
         <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
-        <td><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a href="/friends/destroy/<%= friend.id %>">Destroy</a> </td>
       </tr>
     <% end %>
   </tbody>

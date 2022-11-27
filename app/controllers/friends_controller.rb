@@ -1,7 +1,7 @@
 class FriendsController < ApplicationController
 
   # ========================= Configuration =====================
-  before_action :set_friend, only: %i[ show edit update destroy ]
+  before_action :set_friend, only: %i[show edit update destroy]
 
   # GET /friends or /friends.json
   def index
@@ -16,7 +16,7 @@ class FriendsController < ApplicationController
 
   # GET /friends/1 or /friends/1.json
   def show
-    # call set_friend to get Friend reference
+    # @friend = Friend.find(params[:id])
   end
 
   # GET /friends/new
@@ -26,6 +26,7 @@ class FriendsController < ApplicationController
 
   # GET /friends/1/edit
   def edit
+    #  @friend = Friend.find(params[:id])
   end
 
   # POST /friends or /friends.json
@@ -58,6 +59,12 @@ class FriendsController < ApplicationController
 
   # DELETE /friends/1 or /friends/1.json
   def destroy
+    # Check is'il y a une association
+    a = Annotation.find_by(friend_id: @friend.id)
+    if(a != nil)
+      a.destroy
+    end
+
     @friend.destroy
 
     respond_to do |format|
@@ -75,6 +82,6 @@ class FriendsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def friend_params
-      params.require(:friend).permit(:name, :address, :email, :phone, :sex)
+      params.require(:friend).permit(:name, :address, :email, :phone, :sex, :id)
     end
 end

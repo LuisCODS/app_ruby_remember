@@ -17,7 +17,8 @@
         <td><%= annotation.friend.name %></td>
         <td><strong><%= link_to 'Show', annotation %></strong></td>
         <td><strong><%= link_to 'Edit', edit_annotation_path(annotation) %></strong></td>
-        <td><strong><%= link_to 'Destroy', annotation, method: :delete, data: { confirm: 'Are you sure?' } %></strong></td>
+        <td><strong><%#= link_to 'Destroy', annotation, method: :delete, data: { confirm: 'Are you sure?' } %></strong></td>
+        <td><a href="/annotations/destroy/<%= annotation.id %>">Destroy</a> </td>
       </tr>
     <% end %>
   </tbody>

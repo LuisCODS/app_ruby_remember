@@ -1,4 +1,5 @@
 class Friend < ApplicationRecord
+  
   # ================  tables relations =======================
   has_many :annotations
 

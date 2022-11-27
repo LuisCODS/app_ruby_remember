@@ -12,6 +12,8 @@ gem 'javascript', '~> 0.1.0'
 gem 'will_paginate', '~> 3.3'
 # seed Faker
 gem 'faker', '~> 2.22.0'
+# Rake
+gem 'rake'
 
 
 # ============================================
